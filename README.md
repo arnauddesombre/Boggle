@@ -9,8 +9,8 @@ Boggle is a game distributed by Hasbro (formerly Parker Brothers), see [wikipedi
 - A valid word must be in the dictionary (which typically does not contain proper nouns). 
 
 Parameters:<br>
-1. A dictionary, as a text file containing the list of all valid words, one word per line.<br>
-2. A Boggle board, as a text file with <i>number_of_rows</i>, <i>number_of_columns</i> on the first line (two numbers, separated by one or more spaces), followed by <i>number_of_rows</i> lines, each containing <i>number_of_columns</i> characters separated by one or more spaces. See an example of board below.
+A dictionary, as a text file containing the list of all valid words, one word per line.<br>
+A Boggle board, as a text file with <i>number_of_rows</i>, <i>number_of_columns</i> on the first line (two numbers, separated by one or more spaces), followed by <i>number_of_rows</i> lines, each containing <i>number_of_columns</i> characters separated by one or more spaces. See an example of board below.
 
 Output:<br>
 The number of valid words found, the total score, and the list of longest words found.
