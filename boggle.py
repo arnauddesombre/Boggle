@@ -19,7 +19,7 @@ class Trie:
     # insert a word in the TRIE
     def insert(self, word):
         node = self.root
-        for level in xrange(len(word)):
+        for level in range(len(word)):
             index = self.indexChar(word[level])
             if node.children[index] == None:
                 node.children[index] = Node()
@@ -32,7 +32,7 @@ class Trie:
     #  1: word is in the TRIE
     def search(self, word):
         node = self.root
-        for level in xrange(len(word)):
+        for level in range(len(word)):
             index = self.indexChar(word[level])
             if node.children[index] == None:
                 return -1
@@ -57,8 +57,8 @@ class BoggleSolver:
     # Returns the set of all valid words in the given Boggle board
     def getAllValidWords(self, board):
         self.found = set()
-        for r in xrange(board.rows()):
-            for c in xrange(board.cols()):
+        for r in range(board.rows()):
+            for c in range(board.cols()):
                 self.getAllValidWordsFromCell(board, r, c)
         return sorted(list(self.found))
 
@@ -104,8 +104,8 @@ class BoggleBoard:
     def __init__(self, filename):
         f = open(filename, 'r')
         self.m, self.n = map(int, f.readline().strip().split())
-        self.board = [[[''] * self.n] for _ in xrange(self.m)]
-        for i in xrange(self.m):
+        self.board = [[[''] * self.n] for _ in range(self.m)]
+        for i in range(self.m):
             self.board[i] = f.readline().strip().split()
         f.close()
 
@@ -124,7 +124,7 @@ class BoggleBoard:
     # Returns a string representation of the board
     def __str__(self):
         string = ''
-        for i in xrange(self.m):
+        for i in range(self.m):
             string += ' '.join(map(lambda x: (x + ' ')[:2], self.board[i])) + '\n'
         return string[:-1]
 
@@ -134,18 +134,18 @@ if __name__ == '__main__':
     dictionary = 'dictionary-yawl.txt'
     filename = 'boggle.txt'
 
-    print 'initializing dictionary'
+    print('initializing dictionary')
     solver = BoggleSolver(dictionary)
 
-    print 'solving board'
+    print('solving board')
     board = BoggleBoard(filename)
     solution = solver.getAllValidWords(board)
 
     print
-    print board
+    print(board)
     print
-    print 'number of words =', len(solution)
+    print('number of words =', len(solution))
     if len(solution) > 0:
         solution = sorted(solution, key=len)
-        print 'longest words =', ', '.join([word for word in solution if len(word) == len(solution[-1])])
-    print 'total score =', sum(map(solver.scoreOf, solution))
+        print('longest words =', ', '.join([word for word in solution if len(word) == len(solution[-1])]))
+    print('total score =', sum(map(solver.scoreOf, solution)))
