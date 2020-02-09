@@ -1,4 +1,4 @@
-# Boggle
+# Boggle Solver
 Solver for Boggle.<br>
 <i>boggle.py</i> finds all valid solutions of any Boggle board (classic 4x4, or any custom size).
 
